@@ -40,6 +40,54 @@ const segments = [
   },
 ];
 
+function AnimatedHeroTitle() {
+  const words = [
+    { text: "Money", accent: false },
+    { text: "for", accent: false },
+    { text: "right", accent: true },
+    { text: "now.", accent: true },
+  ];
+  return (
+    <h1 className="animated-hero-title" aria-label="Money for right now. Plans for what's next.">
+      <span className="hero-line hero-line-one">
+        {words.map((word, i) => (
+          <m.span
+            key={word.text}
+            className={word.accent ? "hero-word hero-word-accent" : "hero-word"}
+            initial={{ opacity: 0, y: 34, filter: "blur(10px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: .7, delay: .12 + i * .1, ease: [0.2, 0.7, 0.2, 1] }}
+          >
+            {word.text}&nbsp;
+          </m.span>
+        ))}
+      </span>
+      <m.span
+        className="hero-line"
+        initial={{ opacity: 0, y: 34 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: .8, delay: .58, ease: [0.2, 0.7, 0.2, 1] }}
+      >
+        Plans for what&apos;s next.
+      </m.span>
+      <m.span
+        className="hero-title-sheen"
+        aria-hidden="true"
+        animate={{ x: ["-120%", "150%"] }}
+        transition={{ duration: 3.8, repeat: Infinity, repeatDelay: 2.3, ease: "easeInOut" }}
+      />
+    </h1>
+  );
+}
+
+const journeySteps = [
+  ["01", "Check your fit", "Choose salaried or business-owner profile and the amount you need."],
+  ["02", "Apply online", "Share basic contact, income and requirement details through the digital application."],
+  ["03", "Complete verification", "Provide KYC and profile documents requested for assessment."],
+  ["04", "Lender review", "Your application is assessed against the lending institution's eligibility and credit policy."],
+  ["05", "Decision & next step", "Review the lender's final terms and, if approved and accepted, proceed toward disbursal."],
+];
+
 export function Home() {
   const [faq, setFaq] = useState<number | null>(0);
   const reduce = useReducedMotion();
@@ -56,10 +104,7 @@ export function Home() {
             <div className="nova-copy">
               <Reveal>
                 <span className="nova-kicker"><Zap size={14}/> SMALL LOAN. BIG MOMENTUM.</span>
-                <h1>
-                  Money for <span>right now.</span>
-                  <br/>Plans for what&apos;s next.
-                </h1>
+                <AnimatedHeroTitle />
                 <p className="nova-lead">
                   Instant personal loan assistance from <strong>₹5,000 to ₹3,00,000</strong>
                   for salaried professionals and business owners — digital, guided and built for speed.
@@ -134,6 +179,62 @@ export function Home() {
             <div><FileCheck2/><strong>Minimal friction</strong><span>Simple guided documentation</span></div>
             <div><ShieldCheck/><strong>Safer journey</strong><span>Never share OTPs or passwords</span></div>
             <div><Smartphone/><strong>Stay updated</strong><span>Track your application status</span></div>
+          </div>
+        </section>
+
+        <section className="customer-journey-section" aria-label="Customer loan journey">
+          <div className="container">
+            <Reveal className="journey-heading-v2">
+              <span className="nova-kicker dark"><Sparkles size={14}/> YOUR LOAN JOURNEY</span>
+              <h2>One clear path. <em>Every step in view.</em></h2>
+              <p>From your first eligibility check to the lender's final decision, follow the journey without losing track of what happens next.</p>
+            </Reveal>
+
+            <div className="journey-timeline-v2">
+              <div className="journey-rail" aria-hidden="true">
+                <m.div
+                  className="journey-fill"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true, amount: .35 }}
+                  transition={{ duration: 1.6, ease: [0.2, 0.7, 0.2, 1] }}
+                />
+              </div>
+
+              {journeySteps.map(([no,title,desc],i)=>(
+                <m.div
+                  className="journey-node"
+                  key={no}
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: .45 }}
+                  transition={{ duration: .55, delay: i * .13 }}
+                >
+                  <m.div
+                    className="journey-dot"
+                    initial={{ scale: .6 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ type: "spring", stiffness: 240, damping: 18, delay: .18 + i * .13 }}
+                  >
+                    <span>{no}</span>
+                  </m.div>
+                  <div className="journey-card-v2">
+                    <span className="journey-status">{i===0?"START HERE":i===4?"FINAL STEP":"IN PROGRESS"}</span>
+                    <h3>{title}</h3>
+                    <p>{desc}</p>
+                  </div>
+                </m.div>
+              ))}
+            </div>
+
+            <Reveal className="journey-track-cta">
+              <div>
+                <strong>Already applied?</strong>
+                <span>Use your application reference to see the latest status.</span>
+              </div>
+              <Link href="/track" className="nova-btn journey-track-btn">Track application <ArrowRight size={17}/></Link>
+            </Reveal>
           </div>
         </section>
 
