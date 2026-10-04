@@ -10,6 +10,19 @@ import { Header, Footer } from "./site-shell";
 import { Reveal, m, useReducedMotion } from "./motion";
 import { Calculator as EmiCalculator } from "./calculator";
 
+const lenderNetwork = [
+  "HDFC Bank",
+  "ICICI Bank",
+  "Axis Bank",
+  "IDFC FIRST Bank",
+  "Kotak Mahindra Bank",
+  "Tata Capital",
+  "Bajaj Finserv",
+  "Aditya Birla Finance",
+  "Hero FinCorp",
+  "Poonawalla Fincorp",
+];
+
 const FeatureRail = ({items}:{items:Array<[ElementType,string,string]>}) => (
   <div className="subpage-feature-rail">
     {items.map(([Icon,title,text],i)=>(
@@ -90,6 +103,24 @@ export function PersonalLoanPage(){
               </Reveal>
             })}
           </div>
+        </div>
+      </section>
+
+      <section className="subpage-section lender-network-subpage">
+        <div className="container">
+          <Reveal className="subpage-heading">
+            <span className="nova-kicker dark">OUR LENDER NETWORK</span>
+            <h2>Corporate channel access across <em>leading lenders.</em></h2>
+            <p>SAVRDH Financial Services works through corporate channel / referral arrangements with Banks and NBFCs. Exact lender availability depends on active empanelment and applicant profile.</p>
+          </Reveal>
+          <div className="lender-grid-static">
+            {lenderNetwork.map((name,i)=>(
+              <Reveal className="lender-grid-card" key={name} delay={i*.035}>
+                <Landmark size={18}/><span>{name}</span>
+              </Reveal>
+            ))}
+          </div>
+          <p className="network-fineprint">Loan approval, pricing and disbursal are decided by the relevant lending institution. Names shown are lender-network references and should not be read as a guarantee of current product availability.</p>
         </div>
       </section>
 
