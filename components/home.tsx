@@ -1,478 +1,274 @@
 "use client";
 import Link from "next/link";
 import {
-  ArrowUpRight,
-  ArrowRight,
-  BadgeCheck,
-  ShieldCheck,
-  Clock3,
-  Sparkles,
-  BriefcaseBusiness,
-  UserRound,
-  Building2,
-  Stethoscope,
-  Check,
-  Plus,
-  Minus,
-  Phone,
-  Headphones,
-  FileCheck2,
+  ArrowUpRight, ArrowRight, BadgeCheck, ShieldCheck, Clock3, Sparkles,
+  BriefcaseBusiness, UserRound, Check, Plus, Minus, Phone, FileCheck2,
+  Zap, WalletCards, Landmark, Smartphone, LockKeyhole, IndianRupee
 } from "lucide-react";
 import { useState } from "react";
 import { m, Reveal, useReducedMotion } from "./motion";
 import { Header, Footer } from "./site-shell";
 import { Calculator } from "./calculator";
-const loans = [
-  {
-    name: "Personal Loan",
-    tag: "FOR LIFE’S WHAT’S NEXT",
-    description:
-      "A celebration, an important expense, or a fresh start. Explore finance for your personal goals.",
-    icon: UserRound,
-    number: "01",
-    className: "personal",
-  },
-  {
-    name: "Business Loan",
-    tag: "FOR YOUR NEXT CHAPTER",
-    description:
-      "Working capital, new equipment, or your next big opportunity. Give your ambition room to grow.",
-    icon: BriefcaseBusiness,
-    number: "02",
-    className: "business",
-  },
-  {
-    name: "Professional Loan",
-    tag: "FOR WHAT YOU DO BEST",
-    description:
-      "Build your practice and invest in your expertise with guided credit assistance.",
-    icon: Stethoscope,
-    number: "03",
-    className: "professional",
-  },
-  {
-    name: "Loan Against Property",
-    tag: "FOR BIGGER POSSIBILITIES",
-    description:
-      "Explore how your property can support long-term plans, subject to lender assessment.",
-    icon: Building2,
-    number: "04",
-    className: "property",
-  },
-];
+
 const faqs = [
-  [
-    "Does “Instant Loan” mean guaranteed approval?",
-    "No. You can start your application instantly online. Eligibility, approval, interest rates and disbursement timelines depend on the lending institution and verification of your application.",
-  ],
-  [
-    "What information do I need to get started?",
-    "Start with your name, contact details, city, employment type, monthly income and the amount you need. Our team will explain the documents required for your selected loan. Please never share OTPs or banking passwords.",
-  ],
-  [
-    "Will I know the interest rate before I accept?",
-    "The lending institution determines your rate and terms. Review the offer, all fees, annual percentage rate where applicable, repayment schedule and lender documentation before accepting. The website EMI calculator is an illustration, not an offer.",
-  ],
-  [
-    "How can I check my application status?",
-    "After a successful submission, save your application reference and private tracking code. Open Track Application and enter both to see your status. You can also call 8109995906 for assistance.",
-  ],
-  [
-    "Who operates Savrdh Instant Loan?",
-    "Savrdh Instant Loan is a brand product of Savrdh Financial Services Private Limited, providing loan application and credit facilitation assistance.",
-  ],
+  ["Who can apply for a SAVRDH instant personal loan?",
+   "Salaried professionals and eligible self-employed or business owners can apply. Final eligibility depends on the lending institution's policy, income, credit profile and verification."],
+  ["How much can I apply for?",
+   "You can request a small-ticket personal loan from ₹5,000 to ₹3,00,000. The final sanctioned amount is decided by the lending institution after assessment."],
+  ["Is approval guaranteed or instant?",
+   "No. SAVRDH lets you start the application instantly and helps coordinate the process. Approval, pricing and disbursement are always subject to lender assessment and successful verification."],
+  ["What documents may be required?",
+   "Typically PAN, Aadhaar or other KYC, income proof, bank statement and employment or business proof may be requested. Exact requirements vary by lender and profile."],
+  ["Can I track my application?",
+   "Yes. After submission, use Track Application with your application reference. You can also call 8109995906 for assistance."]
 ];
+
+const segments = [
+  {
+    icon: UserRound,
+    title: "Salaried professionals",
+    subtitle: "For the moments that cannot wait.",
+    points: ["Monthly salary income", "Digital KYC & verification", "Flexible repayment options"],
+    className: "segment-violet",
+  },
+  {
+    icon: BriefcaseBusiness,
+    title: "Business owners",
+    subtitle: "Small finance for your next move.",
+    points: ["Self-employed / proprietors", "Business income assessment", "Fast digital application"],
+    className: "segment-coral",
+  },
+];
+
 export function Home() {
   const [faq, setFaq] = useState<number | null>(0);
   const reduce = useReducedMotion();
+
   return (
     <>
       <Header />
-      <main>
-        <section className="hero">
-          <div className="hero-grain" />
-          <div className="container hero-grid">
-            <div className="hero-copy">
+      <main className="nova-site">
+        <section className="nova-hero">
+          <div className="nova-grid-bg" />
+          <div className="nova-blob blob-a" />
+          <div className="nova-blob blob-b" />
+          <div className="container nova-hero-grid">
+            <div className="nova-copy">
               <Reveal>
-                <span className="hero-pill">
-                  <span /> A LITTLE MOMENTUM. A BIGGER TOMORROW.
-                </span>
+                <span className="nova-kicker"><Zap size={14}/> SMALL LOAN. BIG MOMENTUM.</span>
                 <h1>
-                  Your next move.
-                  <br />
-                  <em>Made possible.</em>
+                  Money for <span>right now.</span>
+                  <br/>Plans for what&apos;s next.
                 </h1>
-                <p>
-                  For the life you’re building and the business you believe in.
-                  A simpler way to explore your loan possibilities.
+                <p className="nova-lead">
+                  Instant personal loan assistance from <strong>₹5,000 to ₹3,00,000</strong>
+                  for salaried professionals and business owners — digital, guided and built for speed.
                 </p>
-                <div className="hero-buttons">
-                  <Link href="/apply" className="button button-gold">
-                    Let’s get you started <ArrowUpRight size={20} />
+                <div className="nova-actions">
+                  <Link href="/apply" className="nova-btn nova-btn-primary">
+                    Apply now <ArrowUpRight size={18}/>
                   </Link>
-                  <a className="text-link" href="#calculator">
-                    Calculate your EMI <ArrowRight size={16} />
+                  <a href="#calculator" className="nova-btn nova-btn-ghost">
+                    Calculate EMI <ArrowRight size={18}/>
                   </a>
                 </div>
-                <div className="hero-assurance">
-                  <span>
-                    <Check size={14} />
-                    Simple online request
-                  </span>
-                  <span>
-                    <Check size={14} />
-                    Personal guidance
-                  </span>
+                <div className="nova-trust-row">
+                  <span><Check/> 100% online request</span>
+                  <span><Check/> Guided process</span>
+                  <span><Check/> Track application</span>
                 </div>
               </Reveal>
-              <div className="hero-bottom-note">
-                <span className="tiny-logo">S</span>
-                <span>
-                  BACKED BY EXPERIENCE. BUILT AROUND YOU.
-                  <br />
-                  <strong>Savrdh Financial Services Private Limited</strong>
-                </span>
-              </div>
             </div>
-            <div
-              className="hero-visual"
-              aria-label="A visual illustration of your loan journey"
-            >
-              <div className="orbital orbital-one" />
-              <div className="orbital orbital-two" />
-              <div className="hero-glow" />
+
+            <div className="nova-stage" aria-label="Interactive loan amount illustration">
               <m.div
-                className="credit-card credit-card-back"
-                initial={{ opacity: 0, rotate: 5, y: 35 }}
-                animate={{ opacity: 1, rotate: 10, y: 0 }}
-                transition={{ duration: 0.9 }}
+                className="nova-orbit orbit-one"
+                animate={reduce ? {} : { rotate: 360 }}
+                transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
               />
               <m.div
-                className="credit-card credit-card-main"
-                initial={{ opacity: 0, y: 30, rotate: -5 }}
-                animate={{
-                  opacity: 1,
-                  y: reduce ? 0 : [0, -10, 0],
-                  rotate: -7,
-                }}
-                transition={{
-                  opacity: { duration: 0.8 },
-                  rotate: { duration: 0.8 },
-                  y: {
-                    duration: 7,
-                    repeat: reduce ? 0 : Infinity,
-                    ease: "easeInOut",
-                  },
-                }}
-              >
-                <div className="card-top">
-                  <span>SAVRDH.</span>
-                  <ArrowUpRight size={30} />
-                </div>
-                <div className="card-chip">
-                  <span />
-                  <span />
-                  <span />
-                </div>
-                <div className="card-title">
-                  A brighter future.
-                  <br />
-                  <em>Starts with you.</em>
-                </div>
-                <div className="card-foot">
-                  <span>INSTANT LOAN</span>
-                  <span className="card-rings">
-                    <i />
-                    <i />
-                  </span>
-                </div>
-              </m.div>
+                className="nova-orbit orbit-two"
+                animate={reduce ? {} : { rotate: -360 }}
+                transition={{ duration: 36, repeat: Infinity, ease: "linear" }}
+              />
+
               <m.div
-                className="floating-note note-top"
-                animate={reduce ? {} : { y: [0, 8, 0] }}
-                transition={{ duration: 6, repeat: Infinity }}
+                className="nova-phone"
+                initial={{ opacity: 0, y: 35, rotate: 6 }}
+                animate={{ opacity: 1, y: reduce ? 0 : [0,-12,0], rotate: 3 }}
+                transition={{ opacity:{duration:.7}, y:{duration:6,repeat:reduce?0:Infinity,ease:"easeInOut"} }}
               >
-                <span className="note-icon">
-                  <ShieldCheck size={20} />
-                </span>
-                <div>
-                  <strong>Your goals. Our guidance.</strong>
-                  <small>With you at every step</small>
-                </div>
+                <div className="phone-island"/>
+                <span className="phone-mini">SAVRDH INSTANT</span>
+                <div className="phone-amount">₹75,000</div>
+                <p>Example request amount</p>
+                <div className="phone-line"><span/><span/><span/></div>
+                <div className="phone-cta">Continue application <ArrowRight size={16}/></div>
               </m.div>
+
               <m.div
-                className="floating-note note-bottom"
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
+                className="nova-card nova-card-top"
+                animate={reduce ? {} : { y:[0,10,0], rotate:[-4,-1,-4] }}
+                transition={{ duration:7, repeat:Infinity, ease:"easeInOut" }}
               >
-                <div className="note-heading">
-                  <span>
-                    <Sparkles size={15} /> YOUR NEXT CHAPTER
-                  </span>
-                  <ArrowUpRight size={18} />
-                </div>
-                <div className="note-progress">
-                  <span className="done">
-                    <Check size={11} />
-                  </span>
-                  <i />
-                  <span>2</span>
-                  <i />
-                  <span>3</span>
-                </div>
-                <div className="note-steps">
-                  <span>Apply</span>
-                  <span>Review</span>
-                  <span>Move forward</span>
-                </div>
+                <span className="mini-icon"><Zap size={18}/></span>
+                <div><small>LOAN RANGE</small><strong>₹5K — ₹3L</strong></div>
               </m.div>
-              <span className="visual-caption">
-                BIG POSSIBILITIES. ONE SIMPLE BEGINNING.
-              </span>
-              <span className="spark spark-one">✧</span>
-              <span className="spark spark-two">✧</span>
+
+              <m.div
+                className="nova-card nova-card-bottom"
+                animate={reduce ? {} : { y:[0,-9,0], rotate:[5,2,5] }}
+                transition={{ duration:6, repeat:Infinity, ease:"easeInOut" }}
+              >
+                <span className="mini-icon coral"><Clock3 size={18}/></span>
+                <div><small>START ONLINE</small><strong>In a few minutes</strong></div>
+              </m.div>
+
+              <div className="nova-ring-label label-one">SALARIED</div>
+              <div className="nova-ring-label label-two">BUSINESS</div>
             </div>
           </div>
-          <div className="hero-scroll">
-            <span>SCROLL TO EXPLORE</span>
-            <span>↓</span>
+
+          <div className="container nova-hero-bottom">
+            <div><Zap/><strong>Fast start</strong><span>Begin your request online</span></div>
+            <div><FileCheck2/><strong>Minimal friction</strong><span>Simple guided documentation</span></div>
+            <div><ShieldCheck/><strong>Safer journey</strong><span>Never share OTPs or passwords</span></div>
+            <div><Smartphone/><strong>Stay updated</strong><span>Track your application status</span></div>
           </div>
         </section>
-        <div className="trust-strip">
+
+        <section id="personal-loan" className="nova-section nova-light">
           <div className="container">
-            <span>
-              <FileCheck2 />
-              Easy digital application
-            </span>
-            <span>
-              <Headphones />A real team, by your side
-            </span>
-            <span>
-              <ShieldCheck />
-              Clear next steps
-            </span>
-            <span>
-              <Clock3 />
-              Track your progress
-            </span>
-          </div>
-        </div>
-        <section id="solutions" className="section solutions">
-          <div className="container">
-            <Reveal className="section-heading heading-split">
-              <div>
-                <span className="eyebrow">POSSIBILITIES, PERSONALISED</span>
-                <h2>
-                  A loan for your
-                  <br />
-                  <em>kind of ambition.</em>
-                </h2>
-              </div>
-              <p>
-                Different dreams need different solutions.
-                <br />
-                Find the right place to begin.
-              </p>
+            <Reveal className="nova-heading">
+              <span className="nova-kicker dark"><Sparkles size={14}/> ONE PRODUCT. TWO PROFILES.</span>
+              <h2>Instant personal loans, <em>made simpler.</em></h2>
+              <p>Focused only on small-ticket personal finance for working people and business owners.</p>
             </Reveal>
-            <div className="loan-grid">
-              {loans.map((loan, i) => (
-                <Reveal key={loan.name} delay={i * 0.06}>
-                  <Link
-                    href={`/apply?product=${encodeURIComponent(loan.name)}`}
-                    className={`loan-card ${loan.className}`}
-                  >
-                    <div className="loan-card-top">
-                      <span className="loan-icon">
-                        <loan.icon size={26} strokeWidth={1.4} />
-                      </span>
-                      <span className="loan-number">{loan.number}</span>
-                    </div>
-                    <span className="eyebrow">{loan.tag}</span>
-                    <h3>{loan.name}</h3>
-                    <p>{loan.description}</p>
-                    <span className="loan-cta">
-                      Explore this loan{" "}
-                      <span>
-                        <ArrowUpRight size={20} />
-                      </span>
-                    </span>
-                  </Link>
+
+            <div className="segment-grid">
+              {segments.map((item, i) => (
+                <Reveal key={item.title} delay={i*.08} className={`segment-card ${item.className}`}>
+                  <div className="segment-icon"><item.icon/></div>
+                  <span className="segment-index">0{i+1}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.subtitle}</p>
+                  <ul>{item.points.map(p => <li key={p}><Check/>{p}</li>)}</ul>
+                  <Link href="/apply" className="segment-link">Check your fit <ArrowUpRight size={18}/></Link>
                 </Reveal>
               ))}
             </div>
-            <p className="section-fineprint">
-              Availability, eligibility and final terms are subject to lending
-              institution assessment.
-            </p>
           </div>
         </section>
-        <section id="how-it-works" className="journey section">
-          <div className="container journey-grid">
-            <Reveal>
-              <span className="eyebrow">LESS FRICTION. MORE FORWARD.</span>
-              <h2>
-                From “what if”
-                <br />
-                to <em>“what’s next”.</em>
-              </h2>
-              <p>
-                A clear path, with someone to guide you.
-                <br />
-                That’s how borrowing should begin.
-              </p>
-              <Link href="/apply" className="button button-dark">
-                Start your application <ArrowUpRight size={18} />
-              </Link>
-              <div className="journey-art" aria-hidden="true">
-                <span className="journey-stair s1" />
-                <span className="journey-stair s2" />
-                <span className="journey-stair s3" />
-                <span className="journey-stair s4" />
-                <ArrowUpRight size={90} strokeWidth={1} />
-              </div>
+
+        <section id="how-it-works" className="nova-section nova-ink">
+          <div className="container">
+            <Reveal className="nova-heading inverse">
+              <span className="nova-kicker"><Clock3 size={14}/> THREE CLEAR MOVES</span>
+              <h2>From application to <em>decision.</em></h2>
+              <p>No confusing maze. A straightforward digital flow with human assistance when you need it.</p>
             </Reveal>
-            <div className="journey-steps">
+
+            <div className="process-line">
               {[
-                [
-                  "01",
-                  "Tell us what you have in mind.",
-                  "Share a few details and your loan requirement. Your journey starts with a simple online application.",
-                ],
-                [
-                  "02",
-                  "We help you find the way.",
-                  "Our team reviews your request, discusses suitable options and guides you through required documents.",
-                ],
-                [
-                  "03",
-                  "Take your next step with clarity.",
-                  "Review lender terms, complete verification and track your application through to its outcome.",
-                ],
-              ].map(([n, title, desc], i) => (
-                <Reveal className="journey-step" key={n} delay={i * 0.08}>
-                  <span>{n}</span>
-                  <div>
-                    <h3>{title}</h3>
-                    <p>{desc}</p>
-                  </div>
+                [Smartphone,"01","Apply online","Share basic details, profile type and the loan amount you need."],
+                [FileCheck2,"02","Verify details","Complete KYC and provide the documents requested for assessment."],
+                [Landmark,"03","Lender decision","Review the lender's final offer, terms and repayment details before accepting."]
+              ].map(([Icon,n,t,d],i) => {
+                const C = Icon as typeof Smartphone;
+                return <Reveal className="process-step" key={String(n)} delay={i*.08}>
+                  <span className="process-no">{String(n)}</span>
+                  <div className="process-icon"><C/></div>
+                  <h3>{String(t)}</h3>
+                  <p>{String(d)}</p>
+                  {i < 2 && <span className="process-arrow"><ArrowRight/></span>}
                 </Reveal>
-              ))}
+              })}
             </div>
           </div>
         </section>
+
+        <section className="nova-section benefits-section">
+          <div className="container benefits-grid">
+            <Reveal className="benefit-feature">
+              <span className="nova-kicker dark"><WalletCards size={14}/> BUILT FOR SMALL-TICKET NEEDS</span>
+              <h2>Borrow only what <em>you need.</em></h2>
+              <p>Start from ₹5,000 and request up to ₹3,00,000. Choose a practical amount and compare the lender's final repayment terms carefully.</p>
+              <Link href="/apply" className="nova-btn nova-btn-primary">Start application <ArrowUpRight size={18}/></Link>
+            </Reveal>
+            <div className="benefit-cards">
+              {[
+                [IndianRupee,"₹5K – ₹3L","Personal loan request range"],
+                [Zap,"Digital first","Start from your phone"],
+                [Clock3,"Flexible tenure","As offered by lender"],
+                [ShieldCheck,"Transparent","Review charges before accepting"],
+                [BadgeCheck,"Two profiles","Salaried + business owners"],
+                [LockKeyhole,"Privacy aware","Secure handling practices"]
+              ].map(([Icon,title,desc],i)=>{
+                const C = Icon as typeof Zap;
+                return <Reveal className="benefit-mini" key={String(title)} delay={i*.04}>
+                  <C/><strong>{String(title)}</strong><span>{String(desc)}</span>
+                </Reveal>
+              })}
+            </div>
+          </div>
+        </section>
+
         <Calculator />
-        <section className="care-section section">
-          <div className="container care-grid">
-            <Reveal className="care-art">
-              <div className="care-orbit" />
-              <div className="care-shield">
-                <ShieldCheck size={92} strokeWidth={1} />
-              </div>
-              <span className="care-label">
-                <BadgeCheck size={18} />
-                Human guidance. Always.
-              </span>
-              <span className="care-mini">
-                More than an application.
-                <br />
-                <em>A conversation.</em>
-              </span>
+
+        <section className="nova-section safety-section">
+          <div className="container safety-grid">
+            <Reveal className="safety-visual">
+              <m.div className="security-core" animate={reduce?{}:{scale:[1,1.04,1]}} transition={{duration:4,repeat:Infinity}}>
+                <ShieldCheck/>
+              </m.div>
+              <div className="security-ring r1"/><div className="security-ring r2"/><div className="security-ring r3"/>
+              <span className="security-chip chip-a">NO OTP SHARING</span>
+              <span className="security-chip chip-b">CHECK FINAL TERMS</span>
             </Reveal>
             <Reveal>
-              <span className="eyebrow">THE SAVRDH DIFFERENCE</span>
-              <h2>
-                Finance is personal.
-                <br />
-                <em>So is our approach.</em>
-              </h2>
-              <p className="care-intro">
-                Behind every application is a real ambition. We make space to
-                understand yours.
-              </p>
-              <div className="care-points">
-                <div>
-                  <ShieldCheck />
-                  <span>
-                    <strong>Clarity at every step</strong>
-                    <p>Understand the process before moving forward.</p>
-                  </span>
-                </div>
-                <div>
-                  <UserRound />
-                  <span>
-                    <strong>People, not just a process</strong>
-                    <p>Talk to a team that helps you navigate your options.</p>
-                  </span>
-                </div>
-                <div>
-                  <FileCheck2 />
-                  <span>
-                    <strong>Your progress, in view</strong>
-                    <p>A dedicated reference to follow your application.</p>
-                  </span>
-                </div>
+              <span className="nova-kicker dark"><ShieldCheck size={14}/> BORROW WITH CLARITY</span>
+              <h2>Fast should still feel <em>responsible.</em></h2>
+              <p className="safety-copy">Savrdh Instant Loan is a loan application and credit facilitation service. We do not guarantee approval, interest rate or disbursement timing. The lending institution makes the final credit decision.</p>
+              <div className="safety-list">
+                <div><Check/><span><strong>Read the lender offer</strong>Check rate, fees, tenure and total repayment before accepting.</span></div>
+                <div><Check/><span><strong>Protect your credentials</strong>Never share OTP, PIN, CVV or banking password with anyone.</span></div>
+                <div><Check/><span><strong>Borrow within your capacity</strong>Choose an EMI that fits your monthly cash flow.</span></div>
               </div>
             </Reveal>
           </div>
         </section>
-        <section className="section faq-section">
-          <div className="container faq-grid">
+
+        <section className="nova-section faq-section-v2">
+          <div className="container faq-grid-v2">
             <Reveal>
-              <span className="eyebrow">A LITTLE MORE CLARITY</span>
-              <h2>
-                Good questions.
-                <br />
-                <em>Straight answers.</em>
-              </h2>
-              <p>Still have something on your mind?</p>
-              <a className="text-link" href="tel:+918109995906">
-                <Phone size={17} />
-                Talk to us: 8109995906
-              </a>
+              <span className="nova-kicker dark"><Sparkles size={14}/> QUICK ANSWERS</span>
+              <h2>Before you apply, <em>know this.</em></h2>
+              <p>Need help? Our team can explain the application flow without asking for your confidential banking credentials.</p>
+              <a className="support-pill" href="tel:+918109995906"><Phone/> 8109995906</a>
             </Reveal>
-            <div className="faq-list">
-              {faqs.map(([q, a], i) => (
-                <div
-                  className={`faq-item ${faq === i ? "active" : ""}`}
-                  key={q}
-                >
-                  <button
-                    aria-expanded={faq === i}
-                    aria-controls={`faq-${i}`}
-                    onClick={() => setFaq(faq === i ? null : i)}
-                  >
-                    {q}
-                    {faq === i ? <Minus size={18} /> : <Plus size={18} />}
+            <div className="faq-list nova-faq">
+              {faqs.map(([q,a],i)=>(
+                <div className={`faq-item-v2 ${faq===i?"active":""}`} key={q}>
+                  <button onClick={()=>setFaq(faq===i?null:i)} aria-expanded={faq===i}>
+                    {q}{faq===i?<Minus/>:<Plus/>}
                   </button>
-                  <div id={`faq-${i}`} hidden={faq !== i}>
-                    <p>{a}</p>
-                  </div>
+                  <div hidden={faq!==i}><p>{a}</p></div>
                 </div>
               ))}
             </div>
           </div>
         </section>
-        <section className="closing-section">
-          <div className="container">
-            <Reveal>
-              <span className="eyebrow">YOUR NEXT CHAPTER IS CALLING</span>
-              <h2>
-                Make room for
-                <br />
-                <em>what’s possible.</em>
-              </h2>
-              <Link href="/apply" className="button button-gold">
-                Start your journey <ArrowUpRight size={20} />
-              </Link>
-              <a href="tel:+918109995906" className="closing-call">
-                Or call us on +91 8109995906
-              </a>
-            </Reveal>
-            <div className="closing-rings" aria-hidden="true">
-              <i />
-              <i />
-              <i />
+
+        <section className="nova-closing">
+          <div className="container nova-closing-inner">
+            <div>
+              <span className="nova-kicker"><Zap size={14}/> YOUR NEXT STEP</span>
+              <h2>Need ₹5,000 to ₹3,00,000?</h2>
+              <p>Start your personal loan request online and track every step.</p>
+            </div>
+            <div className="closing-actions">
+              <Link href="/apply" className="nova-btn nova-btn-white">Apply now <ArrowUpRight size={18}/></Link>
+              <Link href="/track" className="nova-btn nova-btn-outline">Track application <ArrowRight size={18}/></Link>
             </div>
           </div>
         </section>
