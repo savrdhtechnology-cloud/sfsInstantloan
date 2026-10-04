@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useMemo, useState, type CSSProperties, type ElementType, type ReactNode } from "react";
 import {
   ArrowRight, ArrowUpRight, BadgeCheck, BriefcaseBusiness, Calculator,
   Check, ChevronRight, CircleDollarSign, Clock3, FileCheck2, HelpCircle,
@@ -10,7 +10,7 @@ import { Header, Footer } from "./site-shell";
 import { Reveal, m, useReducedMotion } from "./motion";
 import { Calculator as EmiCalculator } from "./calculator";
 
-const FeatureRail = ({items}:{items:Array<[React.ElementType,string,string]>}) => (
+const FeatureRail = ({items}:{items:Array<[ElementType,string,string]>}) => (
   <div className="subpage-feature-rail">
     {items.map(([Icon,title,text],i)=>(
       <Reveal className="subpage-feature" key={title} delay={i*.06}>
@@ -24,7 +24,7 @@ const FeatureRail = ({items}:{items:Array<[React.ElementType,string,string]>}) =
 function SubpageHero({
   eyebrow,title,accent,description,children,visual="rings"
 }:{
-  eyebrow:string;title:string;accent:string;description:string;children?:React.ReactNode;visual?:string
+  eyebrow:string;title:string;accent:string;description:string;children?:ReactNode;visual?:string
 }) {
   const reduce=useReducedMotion();
   return (
@@ -81,7 +81,7 @@ export function PersonalLoanPage(){
               [UserRound,"Salaried professionals","For working professionals who need a small-ticket personal loan for planned or urgent personal needs.",["Salary income","KYC & income assessment","Digital application"]],
               [BriefcaseBusiness,"Business owners","For eligible self-employed applicants and business owners seeking a personal loan based on their profile.",["Business/self-employed profile","Income assessment","Digital application"]]
             ].map(([Icon,title,desc,points],i)=>{
-              const C=Icon as React.ElementType;
+              const C=Icon as ElementType;
               return <Reveal className="profile-panel" key={String(title)} delay={i*.08}>
                 <div className="profile-panel-icon"><C/></div>
                 <h3>{String(title)}</h3><p>{String(desc)}</p>
@@ -193,7 +193,7 @@ export function EligibilityPage(){
             <label className="eligibility-range">Monthly income <strong>₹{income.toLocaleString("en-IN")}</strong><input type="range" min={5000} max={150000} step={5000} value={income} onChange={e=>setIncome(+e.target.value)}/></label>
           </Reveal>
           <Reveal className="eligibility-result">
-            <div className="eligibility-score-ring" style={{"--score":`${score*3.6}deg`} as React.CSSProperties}><span>{score}%</span></div>
+            <div className="eligibility-score-ring" style={{"--score":`${score*3.6}deg`} as CSSProperties}><span>{score}%</span></div>
             <h3>{score>=70?"Good starting profile":score>=55?"Possible starting profile":"Profile may need review"}</h3>
             <p>This quick check uses only basic age and income signals. Final eligibility depends on lender policy, credit profile, verification and other factors.</p>
             <Link href="/apply" className="nova-btn nova-btn-primary">Continue to application <ArrowUpRight size={17}/></Link>
@@ -222,7 +222,7 @@ export function HowItWorksPage(){
       <section className="subpage-section light">
         <div className="container vertical-process">
           {steps.map(([Icon,no,title,desc],i)=>{
-            const C=Icon as React.ElementType;
+            const C=Icon as ElementType;
             return <m.div className="vertical-step" key={String(no)} initial={{opacity:0,x:i%2?-32:32}} whileInView={{opacity:1,x:0}} viewport={{once:true,amount:.4}} transition={{duration:.6,delay:i*.08}}>
               <div className="vertical-step-no">{String(no)}</div>
               <div className="vertical-step-card"><C/><div><h3>{String(title)}</h3><p>{String(desc)}</p></div></div>
