@@ -4460,3 +4460,28 @@ html[data-motion-style="none"] *:after{
   .animated-hero-title .hero-line-one{display:block;}
   .hero-word{display:inline;}
 }
+
+/* Customer journey stays inside the live section color customizer */
+:root{--theme-journey:#f4f6f9;}
+.customer-journey-section{
+  background:
+    radial-gradient(circle at 8% 15%,color-mix(in srgb,var(--theme-primary) 9%,transparent),transparent 24%),
+    linear-gradient(180deg,color-mix(in srgb,var(--theme-journey) 70%,#fff),var(--theme-journey))!important;
+}
+.journey-fill{
+  background:linear-gradient(90deg,
+    color-mix(in srgb,var(--theme-primary) 78%,#7c6114),
+    var(--theme-accent),
+    var(--theme-primary))!important;
+}
+.journey-dot{
+  background:var(--theme-hero)!important;
+  border-color:var(--theme-accent)!important;
+}
+.journey-dot span{color:var(--theme-accent)!important;}
+.journey-heading-v2 h2 em,.journey-status{color:color-mix(in srgb,var(--theme-primary) 78%,#72590f)!important;}
+.journey-track-cta{background:var(--theme-hero)!important;}
+.journey-track-btn{
+  color:var(--theme-hero)!important;
+  background:linear-gradient(135deg,var(--theme-primary),var(--theme-accent))!important;
+}
