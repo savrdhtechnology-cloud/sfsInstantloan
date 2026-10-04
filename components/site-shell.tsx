@@ -150,10 +150,12 @@ export function Header() {
       <div className="container nav-row">
         <Brand light />
         <nav className={open?"main-nav is-open":"main-nav"} aria-label="Main navigation">
-          <Link href="/#personal-loan" onClick={()=>setOpen(false)}>Personal loan</Link>
-          <Link href="/#calculator" onClick={()=>setOpen(false)}>EMI calculator</Link>
-          <Link href="/#how-it-works" onClick={()=>setOpen(false)}>How it works</Link>
+          <Link href="/personal-loan" onClick={()=>setOpen(false)}>Personal loan</Link>
+          <Link href="/emi-calculator" onClick={()=>setOpen(false)}>EMI calculator</Link>
+          <Link href="/eligibility" onClick={()=>setOpen(false)}>Eligibility</Link>
+          <Link href="/how-it-works" onClick={()=>setOpen(false)}>How it works</Link>
           <Link href="/track" onClick={()=>setOpen(false)}>Track application</Link>
+          <Link href="/faqs" onClick={()=>setOpen(false)}>FAQs</Link>
         </nav>
 
         <div className="nav-actions">
@@ -322,8 +324,11 @@ export function Footer() {
           </div>
           <div>
             <h4>Instant loan</h4>
-            <Link href="/#personal-loan">Personal loan</Link>
-            <Link href="/#calculator">EMI calculator</Link>
+            <Link href="/personal-loan">Personal loan</Link>
+            <Link href="/emi-calculator">EMI calculator</Link>
+            <Link href="/eligibility">Eligibility</Link>
+            <Link href="/how-it-works">How it works</Link>
+            <Link href="/faqs">FAQs</Link>
             <Link href="/apply">Apply now</Link>
             <Link href="/track">Track application</Link>
           </div>
