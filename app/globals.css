@@ -4211,3 +4211,252 @@ html[data-motion-style="none"] *:after{
   }
   .custom-color-grid{grid-template-columns:1fr;}
 }
+
+/* ===== SAVRDH Financial Services brand alignment: Navy + Gold ===== */
+:root{
+  --theme-primary:#d4af37;
+  --theme-accent:#e8c766;
+  --theme-hero:#071a33;
+  --theme-personal:#f7f8fb;
+  --theme-process:#081b35;
+  --theme-benefits:#eef2f7;
+  --theme-calculator:#f7f8fb;
+  --theme-safety:#ffffff;
+  --theme-faq:#eef2f7;
+  --theme-closing:#0a2342;
+  --theme-footer:#061426;
+}
+
+.nova-header{
+  background:linear-gradient(180deg,rgba(7,26,51,.98),rgba(7,26,51,.78),transparent)!important;
+  border-bottom:1px solid rgba(212,175,55,.14)!important;
+}
+.nova-header .main-nav a:hover,
+.nova-header .nav-phone:hover{color:var(--theme-primary)!important;}
+.nova-nav-cta{
+  color:#071a33!important;
+  background:linear-gradient(135deg,#d4af37,#e8c766 55%,#b8941f)!important;
+  box-shadow:0 12px 34px rgba(212,175,55,.25)!important;
+}
+.customizer-toggle{
+  border-color:rgba(212,175,55,.26)!important;
+  background:rgba(255,255,255,.05)!important;
+}
+.customizer-toggle:hover{border-color:rgba(212,175,55,.55)!important;background:rgba(212,175,55,.08)!important;}
+
+.nova-hero{
+  background:
+    radial-gradient(circle at 18% 24%,rgba(20,76,129,.42),transparent 36%),
+    radial-gradient(circle at 83% 36%,rgba(212,175,55,.18),transparent 31%),
+    linear-gradient(135deg,var(--theme-hero) 0%,#092546 52%,#061426 100%)!important;
+}
+.nova-grid-bg{opacity:.11!important;}
+.blob-a{background:#174f80!important;opacity:.32!important;}
+.blob-b{background:var(--theme-primary)!important;opacity:.23!important;}
+.nova-kicker{color:#efd98b!important;}
+.nova-kicker.dark{color:#9b7c19!important;}
+.nova-copy h1 span,.hero-word-accent{
+  color:transparent!important;
+  background:linear-gradient(110deg,#f5e6a8,#d4af37 46%,#f0d77d)!important;
+  -webkit-background-clip:text!important;background-clip:text!important;
+}
+.nova-lead{color:#c8d3df!important;}
+.nova-trust-row svg{color:var(--theme-primary)!important;}
+.nova-btn-primary{
+  color:#071a33!important;
+  background:linear-gradient(135deg,#d4af37,#e8c766 60%,#b8921e)!important;
+  box-shadow:0 16px 38px rgba(212,175,55,.24)!important;
+}
+.nova-btn-ghost{border-color:rgba(212,175,55,.24)!important;}
+.nova-btn-ghost:hover{background:rgba(212,175,55,.08)!important;border-color:rgba(212,175,55,.5)!important;}
+.nova-orbit{border-color:rgba(212,175,55,.24)!important;}
+.orbit-two{border-color:rgba(212,175,55,.20)!important;}
+.nova-phone{
+  background:linear-gradient(160deg,#143d68,#0a2342 65%,#061426)!important;
+  border-color:rgba(212,175,55,.25)!important;
+  box-shadow:0 46px 100px rgba(0,0,0,.42),inset 0 1px rgba(255,255,255,.10)!important;
+}
+.nova-phone:before{background:rgba(212,175,55,.18)!important;}
+.phone-mini{color:#eedb95!important;}
+.phone-cta{
+  color:#071a33!important;
+  background:linear-gradient(135deg,#d4af37,#f0d77d)!important;
+}
+.nova-card{
+  background:rgba(8,27,53,.78)!important;
+  border-color:rgba(212,175,55,.22)!important;
+}
+.nova-card small{color:#aebdcd!important;}
+.mini-icon,.mini-icon.coral{
+  background:rgba(212,175,55,.14)!important;
+  color:#efd879!important;
+}
+.nova-ring-label{border-color:rgba(212,175,55,.2)!important;color:#dfd2a0!important;background:rgba(6,20,38,.72)!important;}
+.nova-hero-bottom{border-color:rgba(212,175,55,.18)!important;background:rgba(8,27,53,.66)!important;}
+.nova-hero-bottom svg{color:#d4af37!important;}
+
+.segment-violet .segment-icon,.segment-coral .segment-icon,.security-core{
+  color:#071a33!important;
+  background:linear-gradient(135deg,#d4af37,#e8c766)!important;
+}
+.segment-card li svg,.benefit-mini svg,.safety-list svg,.support-pill svg,.faq-item-v2 button svg{
+  color:#b58e16!important;
+}
+.nova-heading em,.benefit-feature em,.safety-grid em,.faq-grid-v2 em{color:#9b7a12!important;}
+.nova-heading.inverse em{color:#f0d77d!important;}
+.process-icon{
+  background:linear-gradient(135deg,rgba(212,175,55,.24),rgba(232,199,102,.11))!important;
+  color:#f2dc8d!important;
+}
+.process-step{border-color:rgba(212,175,55,.12)!important;}
+.nova-calculator .calc-result{
+  background:linear-gradient(155deg,#0b2748,#071a33)!important;
+}
+.nova-calculator .donut{
+  box-shadow:inset 0 0 0 1px rgba(212,175,55,.10);
+}
+.nova-closing{
+  background:
+    radial-gradient(circle at 85% 35%,rgba(212,175,55,.18),transparent 34%),
+    linear-gradient(120deg,#071a33,#0b2d52 58%,#061426)!important;
+  border-top:1px solid rgba(212,175,55,.16);
+}
+.nova-btn-white{
+  color:#071a33!important;
+  background:linear-gradient(135deg,#d4af37,#e8c766)!important;
+}
+.nova-footer{border-top:1px solid rgba(212,175,55,.14)!important;}
+.nova-footer a:hover{color:#e8c766!important;}
+
+/* Animated hero typography */
+.animated-hero-title{
+  position:relative;
+  display:block;
+  overflow:hidden;
+  isolation:isolate;
+}
+.animated-hero-title .hero-line{
+  display:block;
+  position:relative;
+  z-index:2;
+}
+.animated-hero-title .hero-line-one{display:flex;flex-wrap:wrap;}
+.hero-word{display:inline-block;will-change:transform,opacity,filter;}
+.hero-word-accent{padding-right:.05em;}
+.hero-title-sheen{
+  position:absolute;
+  top:-18%;bottom:-18%;
+  width:22%;
+  z-index:3;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,240,180,.16),transparent);
+  transform:skewX(-18deg);
+  mix-blend-mode:screen;
+}
+
+/* Animated customer journey */
+.customer-journey-section{
+  position:relative;
+  padding:96px 0 104px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 8% 15%,rgba(212,175,55,.08),transparent 24%),
+    linear-gradient(180deg,#fff,#f4f6f9);
+  border-top:1px solid #e5e9ef;
+  border-bottom:1px solid #e5e9ef;
+}
+.journey-heading-v2{max-width:800px;margin-bottom:56px;}
+.journey-heading-v2 h2{
+  margin:0;
+  font-size:clamp(40px,4.4vw,66px);
+  letter-spacing:-.052em;
+  line-height:1.02;
+}
+.journey-heading-v2 h2 em{font-style:normal;color:#9b7a12;}
+.journey-heading-v2 p{max-width:680px;margin-top:18px;color:#667180;font-size:14px;line-height:1.75;}
+
+.journey-timeline-v2{
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:16px;
+  padding-top:28px;
+}
+.journey-rail{
+  position:absolute;
+  top:51px;left:7%;right:7%;
+  height:2px;
+  background:#d8dee7;
+  overflow:hidden;
+}
+.journey-fill{
+  width:100%;height:100%;
+  transform-origin:left center;
+  background:linear-gradient(90deg,#9e7d17,#e8c766,#b79019);
+  box-shadow:0 0 18px rgba(212,175,55,.32);
+}
+.journey-node{position:relative;z-index:2;min-width:0;}
+.journey-dot{
+  width:48px;height:48px;margin:0 auto 22px;
+  display:grid;place-items:center;border-radius:50%;
+  background:#071a33;
+  border:2px solid #e8c766;
+  box-shadow:0 0 0 7px #f5f7fa,0 12px 30px rgba(7,26,51,.13);
+}
+.journey-dot span{font-size:10px;font-weight:900;letter-spacing:.08em;color:#efd77d;}
+.journey-card-v2{
+  min-height:220px;padding:22px 19px;
+  border:1px solid #dfe4eb;border-radius:22px;background:#fff;
+  box-shadow:0 16px 40px rgba(8,27,53,.06);
+  transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
+}
+.journey-node:hover .journey-card-v2{
+  transform:translateY(-6px);
+  border-color:rgba(212,175,55,.55);
+  box-shadow:0 22px 48px rgba(8,27,53,.11);
+}
+.journey-status{
+  display:inline-block;margin-bottom:20px;
+  color:#967619;font-size:8px;font-weight:900;letter-spacing:.14em;
+}
+.journey-card-v2 h3{font-size:18px;letter-spacing:-.035em;color:#112945;}
+.journey-card-v2 p{margin-top:10px;color:#71808e;font-size:11px;line-height:1.7;}
+.journey-track-cta{
+  margin-top:28px;padding:18px 20px;
+  display:flex;justify-content:space-between;align-items:center;gap:22px;
+  border-radius:20px;
+  background:#071a33;color:#fff;
+}
+.journey-track-cta strong{display:block;font-size:13px;}
+.journey-track-cta span{display:block;margin-top:2px;color:#aebdcc;font-size:10px;}
+.journey-track-btn{
+  min-height:44px!important;color:#071a33!important;
+  background:linear-gradient(135deg,#d4af37,#e8c766)!important;
+}
+
+/* More subtle corporate motion */
+@keyframes savrdhGoldPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(212,175,55,0)}
+  50%{box-shadow:0 0 0 8px rgba(212,175,55,.06)}
+}
+.journey-dot{animation:savrdhGoldPulse 3.5s ease-in-out infinite;}
+.journey-node:nth-child(2) .journey-dot{animation-delay:.25s}
+.journey-node:nth-child(3) .journey-dot{animation-delay:.5s}
+.journey-node:nth-child(4) .journey-dot{animation-delay:.75s}
+.journey-node:nth-child(5) .journey-dot{animation-delay:1s}
+
+@media(max-width:980px){
+  .journey-timeline-v2{grid-template-columns:1fr 1fr;gap:18px;}
+  .journey-rail{display:none;}
+  .journey-dot{margin-left:0;}
+}
+@media(max-width:650px){
+  .customer-journey-section{padding:68px 0;}
+  .journey-timeline-v2{grid-template-columns:1fr;}
+  .journey-node{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:start;}
+  .journey-dot{margin:0;}
+  .journey-card-v2{min-height:0;}
+  .journey-track-cta{align-items:flex-start;flex-direction:column;}
+  .animated-hero-title .hero-line-one{display:block;}
+  .hero-word{display:inline;}
+}
