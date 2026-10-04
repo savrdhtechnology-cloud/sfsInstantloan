@@ -4875,3 +4875,71 @@ html[data-motion-style="none"] *:after{
   .legal-hero h1{font-size:48px;}
   .legal-content-section{padding:60px 0;}
 }
+
+/* ===== Corporate Channel Partner / Lender Network ===== */
+.lender-network-section{
+  padding:62px 0 36px;
+  background:
+    radial-gradient(circle at 12% 20%,rgba(212,175,55,.07),transparent 22%),
+    linear-gradient(180deg,#f9fbfd,#eef3f7);
+  border-top:1px solid #e3e8ee;
+  border-bottom:1px solid #e3e8ee;
+  overflow:hidden;
+}
+.lender-network-head{
+  display:grid;grid-template-columns:1fr auto;gap:28px;align-items:end;
+}
+.lender-network-head h2{
+  margin:0;font-size:clamp(36px,4vw,58px);letter-spacing:-.05em;line-height:1.03;
+}
+.lender-network-head h2 em{font-style:normal;color:#9b7a12;font-family:inherit;}
+.lender-network-head p{
+  max-width:760px;margin-top:14px;color:#6d7884;font-size:13px;line-height:1.72;
+}
+.network-badge{
+  min-width:220px;padding:16px 18px;border-radius:18px;background:#071a33;color:#fff;
+  display:flex;align-items:center;gap:10px;border:1px solid rgba(212,175,55,.18);
+}
+.network-badge>svg{color:#e8c766;}
+.network-badge strong{display:block;font-size:11px}.network-badge span{display:block;margin-top:2px;color:#aebdca;font-size:9px;}
+.lender-marquee{
+  margin-top:32px;overflow:hidden;position:relative;
+  mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+}
+.lender-marquee-track{
+  width:max-content;display:flex;gap:12px;padding:4px 0 10px;will-change:transform;
+}
+.lender-chip{
+  min-width:188px;height:58px;padding:0 18px;border-radius:16px;
+  display:flex;align-items:center;gap:10px;
+  background:#fff;border:1px solid #dfe5eb;
+  box-shadow:0 10px 26px rgba(7,26,51,.05);
+  color:#17314b;font-size:11px;font-weight:800;
+}
+.lender-chip svg{color:#a78114;}
+.lender-disclaimer{
+  display:flex;align-items:flex-start;gap:8px;margin-top:16px;color:#788490;font-size:9px;line-height:1.6;
+}
+.lender-disclaimer svg{color:#a47f12;margin-top:1px;}
+
+.lender-network-subpage{background:#f2f5f8;}
+.lender-grid-static{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
+.lender-grid-card{
+  min-height:92px;padding:14px;border:1px solid #dde4ea;border-radius:18px;background:#fff;
+  display:flex;align-items:center;gap:9px;color:#18314a;font-size:10px;font-weight:800;
+  transition:transform .25s,border-color .25s,box-shadow .25s;
+}
+.lender-grid-card:hover{transform:translateY(-4px);border-color:rgba(212,175,55,.5);box-shadow:0 16px 36px rgba(7,26,51,.07);}
+.lender-grid-card svg{color:#a37f13;}
+.network-fineprint{margin-top:16px;color:#7c8792;font-size:9px;line-height:1.65;}
+
+@media(max-width:980px){
+  .lender-network-head{grid-template-columns:1fr;}
+  .network-badge{width:max-content;}
+  .lender-grid-static{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:650px){
+  .lender-network-section{padding:48px 0 28px;}
+  .lender-chip{min-width:160px;height:54px;}
+  .lender-grid-static{grid-template-columns:1fr;}
+}
