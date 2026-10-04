@@ -116,7 +116,7 @@ export function ApplicationForm({
   return (
     <>
       <Header />
-      <main className="container">
+      <main className="application-page"><div className="container">
         <Reveal className="page-intro">
           <Link href="/" className="back-link">
             <ArrowLeft size={14} />
@@ -504,7 +504,7 @@ export function ApplicationForm({
             </div>
           </aside>
         </div>
-      </main>
+        </div></main>
       <Footer />
     </>
   );
