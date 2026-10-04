@@ -4751,3 +4751,127 @@ html[data-motion-style="none"] *:after{
   .vertical-step-card{padding:18px;min-height:110px;}
   .track-new-cta{align-items:flex-start;flex-direction:column;}
 }
+
+/* ===== Apply, Login and Legal pages — same SAVRDH family, distinct experiences ===== */
+.application-page{
+  padding:132px 0 88px;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 82% 12%,rgba(212,175,55,.09),transparent 22%),
+    linear-gradient(180deg,#eef3f8 0,#f8fafc 34%,#fff 100%);
+}
+.application-page .page-intro{
+  position:relative;overflow:hidden;margin-bottom:28px;padding:40px 42px;border-radius:30px;
+  color:#fff;background:
+    radial-gradient(circle at 86% 30%,rgba(212,175,55,.18),transparent 28%),
+    linear-gradient(135deg,#071a33,#0a2c50);
+  box-shadow:0 24px 70px rgba(7,26,51,.13);
+}
+.application-page .page-intro:after{
+  content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(212,175,55,.16);border-radius:50%;
+  right:-80px;top:-90px;box-shadow:0 0 0 36px rgba(212,175,55,.03),0 0 0 72px rgba(212,175,55,.02);
+}
+.application-page .page-intro .back-link{color:#afbdca;}
+.application-page .page-intro .eyebrow{color:#ead17c;}
+.application-page .page-intro h1{font-size:clamp(42px,4.5vw,64px);position:relative;z-index:2;}
+.application-page .page-intro h1 em{color:#e7c75e;}
+.application-page .page-intro p{max-width:620px;color:#c0ccd7!important;position:relative;z-index:2;}
+.application-page .application-grid{padding-bottom:0;}
+.application-page .form-card{
+  border:1px solid #dfe5eb;border-radius:28px;background:#fff;
+  box-shadow:0 24px 64px rgba(7,26,51,.08);
+}
+.application-page .support-card{
+  background:linear-gradient(155deg,#0b2a4c,#071a33)!important;
+  border-radius:28px!important;color:#fff!important;
+  box-shadow:0 24px 60px rgba(7,26,51,.14);
+}
+.application-page .support-card .eyebrow{color:#e7c75e!important;}
+.application-page .support-card p,.application-page .support-card small{color:#b4c2cf!important;}
+.application-page .support-card a{color:#f0d77d!important;}
+.application-page .step-indicator i.current,
+.application-page .step-indicator .current i{
+  background:#071a33!important;color:#e8c766!important;border-color:#e8c766!important;
+}
+.application-page .form-actions .button-dark{
+  background:linear-gradient(135deg,#d4af37,#e8c766)!important;color:#071a33!important;
+}
+
+/* Team login — different split-screen motion, same brand */
+.auth-layout{background:#f6f8fb!important;}
+.auth-art{
+  background:
+    radial-gradient(circle at 30% 20%,rgba(212,175,55,.15),transparent 27%),
+    linear-gradient(145deg,#071a33,#0c3157 65%,#061426)!important;
+}
+.auth-art .eyebrow{color:#e8cf79!important;}
+.auth-art h1 em{color:#e7c75e!important;}
+.auth-art p{color:#bdc9d5!important;}
+.auth-art .brand-mark{border-color:rgba(212,175,55,.30)!important;}
+.auth-content{background:#fff!important;}
+.auth-content .success-icon{
+  background:#071a33!important;color:#e8c766!important;
+  box-shadow:0 12px 30px rgba(7,26,51,.12);
+}
+.auth-content .button-dark{background:linear-gradient(135deg,#d4af37,#e8c766)!important;color:#071a33!important;}
+
+/* Animated legal pages */
+.legal-page-shell{background:#f7f9fb;}
+.legal-hero{
+  position:relative;overflow:hidden;padding:144px 0 72px;color:#fff;
+  background:
+    radial-gradient(circle at 83% 32%,rgba(212,175,55,.16),transparent 30%),
+    linear-gradient(135deg,#071a33,#0a2a4b 58%,#061426);
+}
+.legal-grid-bg{
+  position:absolute;inset:0;opacity:.08;
+  background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);
+  background-size:58px 58px;
+}
+.legal-hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr .7fr;align-items:center;gap:70px;min-height:380px;}
+.legal-hero h1{font-size:clamp(54px,5.5vw,82px);letter-spacing:-.055em;line-height:1;}
+.legal-hero p{max-width:720px;margin-top:20px;color:#c0ccd8;font-size:14px;line-height:1.75;}
+.legal-visual{position:relative;min-height:330px;display:grid;place-items:center;}
+.legal-doc{
+  position:relative;width:235px;height:300px;padding:30px;border-radius:28px;
+  background:linear-gradient(160deg,#123a61,#071a33);border:1px solid rgba(212,175,55,.25);
+  box-shadow:0 35px 90px rgba(0,0,0,.28);
+}
+.legal-doc>svg{width:36px;height:36px;color:#e8c766;}
+.legal-doc strong{display:block;margin-top:40px;font-size:25px;letter-spacing:.03em;}
+.legal-doc span{display:block;margin-top:4px;color:#d7c67f;font-size:10px;letter-spacing:.11em;text-transform:uppercase;}
+.legal-doc i{display:block;height:8px;border-radius:999px;background:rgba(255,255,255,.09);margin-top:14px;}
+.legal-doc i:nth-of-type(2){width:75%}.legal-doc i:nth-of-type(3){width:48%}
+.legal-shield{
+  position:absolute;right:28px;bottom:35px;width:70px;height:70px;border-radius:22px;
+  display:grid;place-items:center;background:linear-gradient(135deg,#d4af37,#e8c766);color:#071a33;
+  box-shadow:0 18px 40px rgba(0,0,0,.20);
+}
+.legal-content-section{padding:82px 0 94px;}
+.legal-content-grid{display:grid;grid-template-columns:.68fr 1.32fr;gap:58px;align-items:start;}
+.legal-side{position:sticky;top:100px;}
+.legal-side h2{font-size:44px;letter-spacing:-.05em;line-height:1.03;}
+.legal-side h2 em{font-style:normal;color:#9b7a12;font-family:inherit;}
+.legal-side p{margin:15px 0 24px;color:#71808d;font-size:12px;line-height:1.75;}
+.legal-sections{display:grid;gap:12px;}
+.legal-section-card{
+  padding:24px;border:1px solid #dde4ea;border-radius:20px;background:#fff;
+  display:grid;grid-template-columns:42px 1fr;gap:14px;
+}
+.legal-section-card>span{font-size:9px;font-weight:900;letter-spacing:.10em;color:#9d7b13;}
+.legal-section-card h2{font-size:20px;color:#17304a;}
+.legal-body p{margin-top:8px;color:#71808d;font-size:11px;line-height:1.8;}
+.legal-body a{color:#8f6c0c;font-weight:800;}
+
+@media(max-width:900px){
+  .legal-hero-grid,.legal-content-grid{grid-template-columns:1fr;}
+  .legal-side{position:static;}
+  .legal-visual{min-height:300px;}
+}
+@media(max-width:650px){
+  .application-page{padding-top:108px;}
+  .application-page .page-intro{padding:28px 22px;}
+  .legal-hero{padding:118px 0 58px;}
+  .legal-hero h1{font-size:48px;}
+  .legal-content-section{padding:60px 0;}
+}
