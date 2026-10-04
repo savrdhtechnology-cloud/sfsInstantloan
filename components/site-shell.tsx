@@ -26,17 +26,17 @@ type MotionIntensity = "low" | "medium" | "high";
 type TextEffect = "none" | "gradient" | "glow" | "outline" | "shadow";
 
 const defaultTheme: ThemeState = {
-  primary: "#5d56f1",
-  accent: "#ff6b5f",
-  hero: "#0d1025",
-  personal: "#f8f5ef",
-  process: "#10142d",
-  benefits: "#f3f0fa",
-  calculator: "#f8f5ef",
+  primary: "#d4af37",
+  accent: "#e8c766",
+  hero: "#071a33",
+  personal: "#f7f8fb",
+  process: "#081b35",
+  benefits: "#eef2f7",
+  calculator: "#f7f8fb",
   safety: "#ffffff",
-  faq: "#f4f1f8",
-  closing: "#5d56f1",
-  footer: "#0b0e21",
+  faq: "#eef2f7",
+  closing: "#0a2342",
+  footer: "#061426",
 };
 
 const sectionFields: Array<{key:keyof ThemeState; label:string}> = [
@@ -52,9 +52,9 @@ const sectionFields: Array<{key:keyof ThemeState; label:string}> = [
 ];
 
 const presets = [
-  { name:"Indigo Coral", primary:"#5d56f1", accent:"#ff6b5f", hero:"#0d1025" },
-  { name:"Royal Blue", primary:"#2563eb", accent:"#22d3ee", hero:"#07152f" },
-  { name:"Emerald Amber", primary:"#059669", accent:"#f59e0b", hero:"#06251f" },
+  { name:"SAVRDH Navy Gold", primary:"#d4af37", accent:"#e8c766", hero:"#071a33" },
+  { name:"Midnight Gold", primary:"#c8a33a", accent:"#f3d77b", hero:"#041225" },
+  { name:"Royal Blue Gold", primary:"#d4af37", accent:"#f4d77b", hero:"#0a2c5a" },
   { name:"Black Gold", primary:"#d4a94f", accent:"#f0c96a", hero:"#101010" },
 ];
 
@@ -80,7 +80,7 @@ export function Header() {
 
   useEffect(()=>{
     try {
-      const savedTheme=localStorage.getItem("savrdh-instant-theme");
+      const savedTheme=localStorage.getItem("savrdh-instant-theme-v2");
       const savedMotion=localStorage.getItem("savrdh-motion-prefs");
       const savedText=(localStorage.getItem("savrdh-text-effect") as TextEffect | null) ?? "none";
       const nextTheme=savedTheme ? {...defaultTheme,...JSON.parse(savedTheme)} : defaultTheme;
@@ -102,7 +102,7 @@ export function Header() {
   const saveTheme=(next:ThemeState)=>{
     setTheme(next);
     applyTheme(next);
-    localStorage.setItem("savrdh-instant-theme",JSON.stringify(next));
+    localStorage.setItem("savrdh-instant-theme-v2",JSON.stringify(next));
   };
 
   const setColor=(key:keyof ThemeState,value:string)=>{
