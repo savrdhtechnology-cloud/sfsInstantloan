@@ -12,6 +12,7 @@ type ThemeState = {
   accent: string;
   hero: string;
   personal: string;
+  journey: string;
   process: string;
   benefits: string;
   calculator: string;
@@ -30,6 +31,7 @@ const defaultTheme: ThemeState = {
   accent: "#e8c766",
   hero: "#071a33",
   personal: "#f7f8fb",
+  journey: "#f4f6f9",
   process: "#081b35",
   benefits: "#eef2f7",
   calculator: "#f7f8fb",
@@ -42,6 +44,7 @@ const defaultTheme: ThemeState = {
 const sectionFields: Array<{key:keyof ThemeState; label:string}> = [
   {key:"hero",label:"Hero"},
   {key:"personal",label:"Personal Loan"},
+  {key:"journey",label:"Customer Journey"},
   {key:"process",label:"How It Works"},
   {key:"benefits",label:"Benefits"},
   {key:"calculator",label:"EMI Calculator"},
