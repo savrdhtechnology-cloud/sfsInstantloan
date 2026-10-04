@@ -250,8 +250,15 @@ export function CRM({
     setRefresh((v) => v + 1);
   }
   return (
-    <div className="crm-layout">
-      <aside className={`crm-sidebar ${mobile ? "mobile-open" : ""}`}>
+    <div className="crm-layout crm-brand-shell">
+      <div className="crm-ambient crm-ambient-one" aria-hidden="true" />
+      <div className="crm-ambient crm-ambient-two" aria-hidden="true" />
+      <m.aside
+        className={`crm-sidebar ${mobile ? "mobile-open" : ""}`}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: .45, ease: [0.2,.7,.2,1] }}
+      >
         <button
           className="icon-button mobile-crm-menu mobile-crm-close"
           onClick={() => setMobile(false)}
@@ -304,9 +311,14 @@ export function CRM({
             </Link>
           )}
         </div>
-      </aside>
+      </m.aside>
       <div className="crm-content">
-        <header className="crm-header">
+        <m.header
+          className="crm-header"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: .4, delay: .08 }}
+        >
           <div>
             <button
               className="icon-button mobile-crm-menu"
@@ -332,7 +344,7 @@ export function CRM({
               {user ? initials(user.full_name) : "S"}
             </span>
           </div>
-        </header>
+        </m.header>
         <main className="crm-main">
           <m.div
             key={view}
