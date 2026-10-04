@@ -91,6 +91,8 @@ export function Header() {
       setTextEffect(savedText);
       applyTheme(nextTheme);
       applyTextEffect(savedText);
+      document.documentElement.dataset.motionStyle = motion.style ?? "rise";
+      document.documentElement.dataset.motionIntensity = motion.intensity ?? "medium";
     } catch {
       applyTheme(defaultTheme);
       applyTextEffect("none");
