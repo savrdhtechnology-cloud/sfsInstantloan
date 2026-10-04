@@ -156,6 +156,7 @@ export function Header() {
           <Link href="/how-it-works" onClick={()=>setOpen(false)}>How it works</Link>
           <Link href="/track" onClick={()=>setOpen(false)}>Track application</Link>
           <Link href="/faqs" onClick={()=>setOpen(false)}>FAQs</Link>
+          <Link href="/about" onClick={()=>setOpen(false)}>About Us</Link>
         </nav>
 
         <div className="nav-actions">
@@ -331,6 +332,7 @@ export function Footer() {
             <Link href="/faqs">FAQs</Link>
             <Link href="/apply">Apply now</Link>
             <Link href="/track">Track application</Link>
+            <Link href="/about">About us</Link>
           </div>
           <div>
             <h4>Support</h4>
