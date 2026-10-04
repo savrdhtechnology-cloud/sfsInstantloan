@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { Header, Footer } from "./site-shell";
 import { m, Reveal } from "./motion";
-import { money, products } from "@/lib/finance";
+import { money } from "@/lib/finance";
 type Details = {
   full_name: string;
   phone: string;
@@ -269,10 +269,8 @@ export function ApplicationForm({
                             >
                               {[
                                 "Salaried",
-                                "Self-employed",
                                 "Business owner",
-                                "Professional",
-                                "Other",
+                                "Self-employed",
                               ].map((v) => (
                                 <option key={v}>{v}</option>
                               ))}
@@ -306,24 +304,16 @@ export function ApplicationForm({
                         </p>
                         <div className="form-grid">
                           <label className="field full">
-                            Loan solution
-                            <select
-                              value={data.product}
-                              onChange={(e) =>
-                                update("product", e.target.value)
-                              }
-                            >
-                              {products.map((p) => (
-                                <option key={p}>{p}</option>
-                              ))}
-                            </select>
+                            Loan product
+                            <input value="Personal Loan" readOnly aria-readonly="true" />
                           </label>
                           <label className="field">
                             Loan amount (₹)
                             <input
                               type="number"
-                              min={25000}
-                              max={100000000}
+                              min={5000}
+                              max={300000}
+                              step={5000}
                               required
                               value={data.amount}
                               onChange={(e) => update("amount", e.target.value)}
@@ -333,9 +323,9 @@ export function ApplicationForm({
                             Preferred tenure (months)
                             <input
                               type="number"
-                              min={6}
-                              max={240}
-                              step={1}
+                              min={3}
+                              max={60}
+                              step={3}
                               required
                               value={data.tenure}
                               onChange={(e) => update("tenure", e.target.value)}
