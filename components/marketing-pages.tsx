@@ -11,16 +11,16 @@ import { Reveal, m, useReducedMotion } from "./motion";
 import { Calculator as EmiCalculator } from "./calculator";
 
 const lenderNetwork = [
-  "HDFC Bank",
-  "ICICI Bank",
-  "Axis Bank",
-  "IDFC FIRST Bank",
-  "Kotak Mahindra Bank",
-  "Tata Capital",
-  "Bajaj Finserv",
-  "Aditya Birla Finance",
-  "Hero FinCorp",
-  "Poonawalla Fincorp",
+  { name: "HDFC Bank", logo: "https://www.google.com/s2/favicons?domain=hdfcbank.com&sz=128" },
+  { name: "ICICI Bank", logo: "https://www.google.com/s2/favicons?domain=icicibank.com&sz=128" },
+  { name: "Axis Bank", logo: "https://www.google.com/s2/favicons?domain=axisbank.com&sz=128" },
+  { name: "IDFC FIRST Bank", logo: "https://www.google.com/s2/favicons?domain=idfcfirstbank.com&sz=128" },
+  { name: "Kotak Mahindra Bank", logo: "https://www.google.com/s2/favicons?domain=kotak.com&sz=128" },
+  { name: "Tata Capital", logo: "https://www.google.com/s2/favicons?domain=tatacapital.com&sz=128" },
+  { name: "Bajaj Finserv", logo: "https://www.google.com/s2/favicons?domain=bajajfinserv.in&sz=128" },
+  { name: "Aditya Birla Finance", logo: "https://www.google.com/s2/favicons?domain=adityabirlacapital.com&sz=128" },
+  { name: "Hero FinCorp", logo: "https://www.google.com/s2/favicons?domain=herofincorp.com&sz=128" },
+  { name: "Poonawalla Fincorp", logo: "https://www.google.com/s2/favicons?domain=poonawallafincorp.com&sz=128" },
 ];
 
 const FeatureRail = ({items}:{items:Array<[ElementType,string,string]>}) => (
@@ -114,9 +114,12 @@ export function PersonalLoanPage(){
             <p>SAVRDH Financial Services works through corporate channel / referral arrangements with Banks and NBFCs. Exact lender availability depends on active empanelment and applicant profile.</p>
           </Reveal>
           <div className="lender-grid-static">
-            {lenderNetwork.map((name,i)=>(
-              <Reveal className="lender-grid-card" key={name} delay={i*.035}>
-                <Landmark size={18}/><span>{name}</span>
+            {lenderNetwork.map((lender,i)=>(
+              <Reveal className="lender-grid-card" key={lender.name} delay={i*.035}>
+                <span className="lender-logo-wrap">
+                  <img src={lender.logo} alt="" className="lender-logo" loading="lazy" />
+                </span>
+                <span>{lender.name}</span>
               </Reveal>
             ))}
           </div>
