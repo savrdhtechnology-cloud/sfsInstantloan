@@ -1,10 +1,11 @@
 "use client";
 import { ArrowLeft, ArrowUpRight, FileText, ShieldCheck, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { type ReactNode } from "react";
 import { Header, Footer } from "./site-shell";
 import { Reveal, m, useReducedMotion } from "./motion";
 
-export type LegalSection={title:string;body:React.ReactNode};
+export type LegalSection={title:string;body:ReactNode};
 
 export function LegalPage({
   eyebrow,title,subtitle,sections
