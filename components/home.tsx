@@ -80,6 +80,20 @@ function AnimatedHeroTitle() {
   );
 }
 
+
+const lenderNetwork = [
+  "HDFC Bank",
+  "ICICI Bank",
+  "Axis Bank",
+  "IDFC FIRST Bank",
+  "Kotak Mahindra Bank",
+  "Tata Capital",
+  "Bajaj Finserv",
+  "Aditya Birla Finance",
+  "Hero FinCorp",
+  "Poonawalla Fincorp",
+];
+
 const journeySteps = [
   ["01", "Check your fit", "Choose salaried or business-owner profile and the amount you need."],
   ["02", "Apply online", "Share basic contact, income and requirement details through the digital application."],
@@ -179,6 +193,46 @@ export function Home() {
             <div><FileCheck2/><strong>Minimal friction</strong><span>Simple guided documentation</span></div>
             <div><ShieldCheck/><strong>Safer journey</strong><span>Never share OTPs or passwords</span></div>
             <div><Smartphone/><strong>Stay updated</strong><span>Track your application status</span></div>
+          </div>
+        </section>
+
+
+        <section className="lender-network-section" aria-label="Corporate channel partner network">
+          <div className="container lender-network-head">
+            <Reveal>
+              <span className="nova-kicker dark"><Landmark size={14}/> CORPORATE CHANNEL PARTNER NETWORK</span>
+              <h2>Connected with leading <em>Banks &amp; NBFCs.</em></h2>
+              <p>
+                SAVRDH Financial Services works through corporate channel / referral arrangements with lending institutions.
+                Product availability, lender selection and active empanelment vary by profile, geography and program.
+              </p>
+            </Reveal>
+            <Reveal className="network-badge">
+              <BadgeCheck size={20}/>
+              <div><strong>Multi-lender access</strong><span>Bank &amp; NBFC options</span></div>
+            </Reveal>
+          </div>
+
+          <div className="lender-marquee" role="presentation">
+            <m.div
+              className="lender-marquee-track"
+              animate={reduce ? {} : { x: ["0%", "-50%"] }}
+              transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
+            >
+              {[...lenderNetwork, ...lenderNetwork].map((name,i)=>(
+                <div className="lender-chip" key={`${name}-${i}`}>
+                  <Landmark size={15}/>
+                  <span>{name}</span>
+                </div>
+              ))}
+            </m.div>
+          </div>
+
+          <div className="container lender-disclaimer">
+            <ShieldCheck size={15}/>
+            <span>
+              Institution names are shown as lender-network references. Loan offers, eligibility, approval, pricing and disbursal remain subject to the relevant institution&apos;s policy and active channel availability.
+            </span>
           </div>
         </section>
 
