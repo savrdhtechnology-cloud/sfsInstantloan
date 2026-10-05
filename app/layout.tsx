@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { MotionProvider } from "@/components/motion";
+import { MotionProvider, SiteMotionShell } from "@/components/motion";
 import "@fontsource-variable/manrope";
 import "@fontsource-variable/dm-sans";
 import "./globals.css";
@@ -14,5 +14,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}) {
-  return <html lang="en"><body><MotionProvider>{children}</MotionProvider></body></html>;
+  return <html lang="en"><body><MotionProvider><SiteMotionShell>{children}</SiteMotionShell></MotionProvider></body></html>;
 }

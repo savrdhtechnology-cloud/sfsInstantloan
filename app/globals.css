@@ -5306,3 +5306,162 @@ tbody tr:hover{background:#fffaf0!important;}
   .about-hero-visual{transform:scale(.86);min-height:400px}
   .about-large-copy{font-size:20px}
 }
+
+
+/* ===== Global Framer Motion support layer ===== */
+.site-motion-root{position:relative;min-height:100vh;isolation:isolate}
+.route-motion-stage{position:relative;z-index:1;min-height:100vh}
+.global-motion-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.global-motion-orb{position:absolute;display:block;border-radius:999px;filter:blur(58px);opacity:.12;will-change:transform}
+.global-motion-orb-a{width:360px;height:360px;right:-90px;top:12vh;background:#d4af37}
+.global-motion-orb-b{width:300px;height:300px;left:-100px;bottom:12vh;background:#174d80;opacity:.1}
+.global-motion-line{position:absolute;display:block;width:34vw;height:1px;top:34vh;left:-35vw;background:linear-gradient(90deg,transparent,rgba(212,175,55,.7),transparent);filter:drop-shadow(0 0 9px rgba(212,175,55,.35))}
+.site-header,.nova-header{will-change:transform,opacity}
+.site-footer,.nova-footer{will-change:transform,opacity}
+
+/* Stronger, visible motion feel across all existing pages */
+.nova-btn,.button,.profile-cta,.segment-link,.track-back,.back-link,.footer-main a,.main-nav a,.nova-nav-cta,
+.customizer-toggle,.choice-grid button,.text-effect-list button{
+  transition:transform .22s cubic-bezier(.16,1,.3,1),box-shadow .22s ease,border-color .22s ease,background-color .22s ease!important;
+}
+.nova-btn:hover,.button:hover,.profile-cta:hover,.segment-link:hover,.nova-nav-cta:hover{
+  transform:translateY(-3px) scale(1.015);
+}
+.nova-btn:active,.button:active,.profile-cta:active,.segment-link:active,.nova-nav-cta:active{
+  transform:translateY(0) scale(.985);
+}
+
+.about-pillar-card,.about-service-card,.about-mission-card,.segment-card,.benefit-mini,.process-step,.journey-card-v2,
+.subpage-feature,.profile-panel,.lender-grid-card,.vertical-step-card,.faq-page-item,.legal-section-card,.form-card,
+.support-card,.side-checklist,.track-stage-card,.auth-card,.crm-card{
+  transition:transform .38s cubic-bezier(.16,1,.3,1),box-shadow .38s ease,border-color .38s ease!important;
+  transform-style:preserve-3d;
+  will-change:transform;
+}
+.about-pillar-card:hover,.about-service-card:hover,.segment-card:hover,.benefit-mini:hover,.process-step:hover,
+.subpage-feature:hover,.profile-panel:hover,.lender-grid-card:hover,.vertical-step-card:hover,.legal-section-card:hover,
+.support-card:hover,.track-stage-card:hover{
+  transform:translateY(-7px) perspective(900px) rotateX(1.2deg);
+  box-shadow:0 24px 58px rgba(7,26,51,.14);
+}
+
+.nova-grid-bg,.about-grid-bg,.subpage-grid-bg,.track-grid-bg,.legal-grid-bg{
+  background-position:0 0;
+  animation:savrdhGridDrift 18s linear infinite;
+}
+@keyframes savrdhGridDrift{
+  from{background-position:0 0}
+  to{background-position:72px 72px}
+}
+
+.nova-kicker,.subpage-eyebrow,.eyebrow{
+  position:relative;
+  overflow:hidden;
+}
+.nova-kicker:after,.subpage-eyebrow:after,.eyebrow:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(100deg,transparent 20%,rgba(255,255,255,.38) 48%,transparent 74%);
+  transform:translateX(-140%);
+  animation:savrdhTextSheen 5.8s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes savrdhTextSheen{
+  0%,62%{transform:translateX(-140%)}
+  82%,100%{transform:translateX(140%)}
+}
+
+.security-ring,.about-orbit,.visual-ring,.track-orbit{
+  will-change:transform;
+}
+.security-ring{animation:savrdhPulseRing 5s ease-in-out infinite}
+.security-ring.r2{animation-delay:.8s}.security-ring.r3{animation-delay:1.6s}
+@keyframes savrdhPulseRing{
+  0%,100%{transform:scale(1);opacity:.25}
+  50%{transform:scale(1.045);opacity:.55}
+}
+
+.phone-line span,.about-card-line i,.track-mini-line i{
+  animation:savrdhDataPulse 2.8s ease-in-out infinite;
+}
+.phone-line span:nth-child(2),.about-card-line i:nth-child(2),.track-mini-line i:nth-child(2){animation-delay:.35s}
+.phone-line span:nth-child(3),.about-card-line i:nth-child(3),.track-mini-line i:nth-child(3){animation-delay:.7s}
+@keyframes savrdhDataPulse{
+  0%,100%{opacity:.28;transform:scaleX(.88)}
+  50%{opacity:1;transform:scaleX(1)}
+}
+
+input[type="range"]{cursor:pointer}
+input[type="range"]::-webkit-slider-thumb{transition:transform .2s ease,box-shadow .2s ease}
+input[type="range"]:active::-webkit-slider-thumb{transform:scale(1.16);box-shadow:0 0 0 7px rgba(212,175,55,.14)}
+
+@media(prefers-reduced-motion:reduce){
+  .nova-grid-bg,.about-grid-bg,.subpage-grid-bg,.track-grid-bg,.legal-grid-bg,
+  .nova-kicker:after,.subpage-eyebrow:after,.eyebrow:after,.security-ring,
+  .phone-line span,.about-card-line i,.track-mini-line i{animation:none!important}
+  .global-motion-layer{display:none}
+}
+
+
+/* ===== Persistent visible motion accents ===== */
+.site-scroll-progress{
+  position:fixed;z-index:9999;top:0;left:0;right:0;height:3px;
+  transform-origin:0 50%;
+  background:linear-gradient(90deg,#8f731d,#d4af37,#f1db87);
+  box-shadow:0 0 18px rgba(212,175,55,.5);
+}
+.global-motion-coin{
+  position:absolute;display:block;width:54px;height:54px;border-radius:50%;
+  border:1px solid rgba(212,175,55,.38);
+  background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.22),rgba(212,175,55,.2) 35%,rgba(212,175,55,.03) 70%);
+  box-shadow:0 18px 46px rgba(0,0,0,.18),inset 0 0 18px rgba(255,255,255,.05);
+  backdrop-filter:blur(6px);
+  opacity:.42;
+}
+.global-motion-coin:before{
+  content:"₹";position:absolute;inset:0;display:grid;place-items:center;
+  color:rgba(212,175,55,.8);font-size:18px;font-weight:900;
+}
+.global-motion-coin-left{left:3vw;top:32vh}
+.global-motion-coin-right{right:4vw;top:62vh;width:42px;height:42px;opacity:.32}
+
+.about-brand-card,.about-product-stack,.nova-phone,.track-phone,.legal-doc,.orb-card,.orb-calculator,.faq-orb,.process-orb{
+  animation:savrdhFloatSurface 6s ease-in-out infinite;
+  will-change:transform;
+}
+.about-product-stack.second,.track-phone,.orb-calculator{animation-delay:-2s}
+@keyframes savrdhFloatSurface{
+  0%,100%{transform:translate3d(0,0,0) rotate(.01deg)}
+  50%{transform:translate3d(0,-8px,0) rotate(.4deg)}
+}
+
+.benefit-mini:nth-child(2n),.about-service-card:nth-child(2n),.lender-grid-card:nth-child(2n),.subpage-feature:nth-child(2n){
+  animation:savrdhCardBreathe 7s ease-in-out infinite;
+}
+.benefit-mini:nth-child(2n+1),.about-service-card:nth-child(2n+1),.lender-grid-card:nth-child(2n+1),.subpage-feature:nth-child(2n+1){
+  animation:savrdhCardBreathe 7s ease-in-out infinite reverse;
+  animation-delay:-1.5s;
+}
+@keyframes savrdhCardBreathe{
+  0%,100%{box-shadow:0 10px 28px rgba(7,26,51,.03)}
+  50%{box-shadow:0 22px 48px rgba(7,26,51,.11),0 0 0 1px rgba(212,175,55,.11)}
+}
+
+.nova-btn svg,.button svg,.segment-link svg,.profile-cta svg,.footer-main a svg{
+  transition:transform .24s cubic-bezier(.16,1,.3,1);
+}
+.nova-btn:hover svg,.button:hover svg,.segment-link:hover svg,.profile-cta:hover svg,.footer-main a:hover svg{
+  transform:translate3d(4px,-2px,0);
+}
+
+@media(max-width:800px){
+  .global-motion-coin{opacity:.2;transform:scale(.78)}
+  .global-motion-coin-left{left:-12px}.global-motion-coin-right{right:-10px}
+  .global-motion-orb{opacity:.07}
+}
+@media(prefers-reduced-motion:reduce){
+  .site-scroll-progress,.global-motion-coin{display:none}
+  .about-brand-card,.about-product-stack,.nova-phone,.track-phone,.legal-doc,.orb-card,.orb-calculator,.faq-orb,.process-orb,
+  .benefit-mini,.about-service-card,.lender-grid-card,.subpage-feature{animation:none!important}
+}

@@ -1,6 +1,5 @@
-import { Home } from "@/components/home";
-export default function Page() {
-  return <Home />;
-}
+import { ExperimentalHome } from "@/components/experimental-home";
 
-// Production rebuild: SAVRDH instant personal loan redesign
+export default function Page() {
+  return <ExperimentalHome />;
+}

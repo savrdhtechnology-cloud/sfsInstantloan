@@ -6,6 +6,7 @@ import {
   Palette, WandSparkles, Type, Check
 } from "lucide-react";
 import { Brand } from "./brand";
+import { m, useReducedMotion } from "./motion";
 
 type ThemeState = {
   primary: string;
@@ -73,6 +74,7 @@ function applyTextEffect(effect: TextEffect) {
 }
 
 export function Header() {
+  const reduce=useReducedMotion();
   const [open,setOpen]=useState(false);
   const [panelOpen,setPanelOpen]=useState(false);
   const [tab,setTab]=useState<"colors"|"motion"|"text">("colors");
@@ -146,7 +148,7 @@ export function Header() {
   };
 
   return (
-    <header className="site-header nova-header">
+    <m.header className="site-header nova-header" initial={reduce?false:{opacity:0,y:-24}} animate={{opacity:1,y:0}} transition={{duration:.65,ease:[.16,1,.3,1]}}>
       <div className="container nav-row">
         <Brand light />
         <nav className={open?"main-nav is-open":"main-nav"} aria-label="Main navigation">
@@ -299,7 +301,7 @@ export function Header() {
           </button>
         </div>
       </div>
-    </header>
+    </m.header>
   );
 }
 
@@ -314,8 +316,9 @@ function ColorField({label,value,onChange}:{label:string;value:string;onChange:(
 }
 
 export function Footer() {
+  const reduce=useReducedMotion();
   return (
-    <footer className="site-footer nova-footer">
+    <m.footer className="site-footer nova-footer" initial={reduce?false:{opacity:0,y:30}} whileInView={{opacity:1,y:0}} viewport={{once:false,amount:.12}} transition={{duration:.75,ease:[.16,1,.3,1]}}>
       <div className="container">
         <div className="footer-main">
           <div>
@@ -350,6 +353,6 @@ export function Footer() {
           <span>Personal loan range ₹5,000 — ₹3,00,000</span>
         </div>
       </div>
-    </footer>
+    </m.footer>
   );
 }

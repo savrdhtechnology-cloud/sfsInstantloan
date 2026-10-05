@@ -2,7 +2,7 @@
 import { useState, type FormEvent } from "react";
 import {
   Search, Check, ArrowRight, ArrowLeft, ShieldCheck, Clock3,
-  FileCheck2, Landmark, BadgeCheck, CircleDollarSign, Sparkles
+  FileCheck2, Landmark, BadgeCheck, CircleDollarSign, Sparkles, type LucideIcon
 } from "lucide-react";
 import Link from "next/link";
 import { Header, Footer } from "./site-shell";
@@ -17,7 +17,7 @@ type Tracked = {
   updated_at: string;
 };
 
-const statusMeta: Record<string,{icon:React.ElementType;title:string;desc:string}> = {
+const statusMeta: Record<string,{icon:LucideIcon;title:string;desc:string}> = {
   New:{icon:Sparkles,title:"Application received",desc:"Your request has been recorded in the system."},
   Contacted:{icon:Clock3,title:"Contact initiated",desc:"Our team has started the next communication step."},
   "Documents Pending":{icon:FileCheck2,title:"Documents pending",desc:"Some verification information or documents may still be required."},

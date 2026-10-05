@@ -20,7 +20,10 @@
     "react": "19.2.6",
     "react-dom": "19.2.6",
     "server-only": "0.0.1",
-    "zod": "3.25.76"
+    "zod": "3.25.76",
+    "@react-three/drei": "10.7.6",
+    "@react-three/fiber": "9.4.0",
+    "three": "0.180.0"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.5.8",
